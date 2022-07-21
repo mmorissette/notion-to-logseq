@@ -11,18 +11,16 @@ module NotionToLogseq
 
     def page_link?(link)
       match = link.match(LINK_MATCHER)
-      !!match
+      return false unless match
+      _,link = match.captures
+      URI(link).scheme.nil?
     end
 
     private
 
     def transform_page_link(page_link)
       match = page_link.match(LINK_MATCHER)
-      return page_link unless match
-
-      title,link = match.captures
-      return page_link if URI(link).scheme
-
+      title,_ = match.captures
       "[[#{title}]]"
     end
   end
