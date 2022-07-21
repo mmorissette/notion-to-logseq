@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "notion/to/logseq"
+require "notion_to_logseq"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
