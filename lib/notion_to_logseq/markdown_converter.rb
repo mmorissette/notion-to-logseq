@@ -4,6 +4,10 @@ module NotionToLogseq
   class MarkdownConverter
     LINK_MATCHER = /\[(.*?)\]\((.*?)\)/
 
+    def transform_line(line)
+
+    end
+
     def transform_link(link)
       return link unless page_link?(link)
       transform_page_link(link)
